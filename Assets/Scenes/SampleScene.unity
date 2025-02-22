@@ -366,6 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d47d484652ba0941b999452e72d5d94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactDistance: 4.5
 --- !u!4 &258786044
 Transform:
   m_ObjectHideFlags: 0
@@ -394,9 +395,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crossReact: {fileID: 341342673}
-  CrossImage: {fileID: 0}
-  defaultCross: {fileID: 21300000, guid: 5a29cc64c1d50cb4d8e6e0acebc0961f, type: 3}
-  interactCross: {fileID: 21300000, guid: 8361e3eb159eab74cb5813ee3a4f2bf4, type: 3}
+  crossImage: {fileID: 0}
+  defaultCross: {fileID: 21300000, guid: 8361e3eb159eab74cb5813ee3a4f2bf4, type: 3}
+  interactCross: {fileID: 21300000, guid: 5a29cc64c1d50cb4d8e6e0acebc0961f, type: 3}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0

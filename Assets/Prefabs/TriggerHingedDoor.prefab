@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 877893217636039952}
   - component: {fileID: 164418956186384878}
   - component: {fileID: 2177584261254445235}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door
   m_TagString: OpenableHingedDoor
   m_Icon: {fileID: 0}

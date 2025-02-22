@@ -3,17 +3,17 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    public RectTransform crossReact;
-    public Image CrossImage;
+    public RectTransform crossReact; 
+    [HideInInspector] public Image crossImage;
     public Sprite defaultCross;
     public Sprite interactCross;
 
     private void Awake()
     {
-        CrossImage = crossReact.GetComponentInChildren<Image>();
+        crossImage = crossReact.GetComponentInChildren<Image>();
     }
     private void Start()
     {
-        CrossImage.sprite = defaultCross;
+        crossImage.sprite = defaultCross;
     }
 }
