@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactDistance: 4.5
-  inspectionSensitivity: 10
+  inspectionSensitivity: 3
 --- !u!4 &258786044
 Transform:
   m_ObjectHideFlags: 0
@@ -843,7 +843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940d9ec5464638a46bcca94a542bfd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inspectionSensitivity: 5
 --- !u!65 &430397590
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1142,7 +1141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940d9ec5464638a46bcca94a542bfd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inspectionSensitivity: 5
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940d9ec5464638a46bcca94a542bfd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inspectionSensitivity: 5
 --- !u!65 &1972191940243840648
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1914,7 +1911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940d9ec5464638a46bcca94a542bfd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inspectionSensitivity: 5
 --- !u!1001 &8749799930917903915
 PrefabInstance:
   m_ObjectHideFlags: 0

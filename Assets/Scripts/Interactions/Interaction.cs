@@ -3,7 +3,7 @@ using UnityEngine;
 public class Interaction : MonoBehaviour
 {
     [SerializeField, Range(1f, 50f)] private float interactDistance = 5f;
-    [SerializeField] private float inspectionSensitivity;
+    [SerializeField] private float inspectionSensitivity = 3f; 
     private PlayerMovement playerMovement;
     private Camera _camera;
     private UIController _uiController;
@@ -57,7 +57,7 @@ public class Interaction : MonoBehaviour
                     inspection.GetInspectionCoroutine();
                 }
             }
-            inspection.GetInspection(ref _isInspection);
+            inspection.GetInspection(ref _isInspection,inspectionSensitivity);
         }
     }
 }

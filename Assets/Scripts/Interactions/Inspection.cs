@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Inspection : MonoBehaviour
 {
-    [SerializeField] private float inspectionSensitivity = 5f;
     private Camera _camera;
     private Quaternion currentRotation;
     private Vector3 currentPosition;
@@ -27,7 +26,7 @@ public class Inspection : MonoBehaviour
         inspectionCoroutine = StartCoroutine(StartInspection());
     }
 
-    public void GetInspection(ref bool isInspection)
+    public void GetInspection(ref bool isInspection, float inspectionSensitivity)
     {
         if (isInspection)
         {
