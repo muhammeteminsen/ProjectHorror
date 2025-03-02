@@ -6,8 +6,6 @@ public class Inspection : MonoBehaviour
     private Camera _camera;
     private Quaternion currentRotation;
     private Vector3 currentPosition;
-    private Coroutine currentCoroutine;
-    private Coroutine inspectionCoroutine;
     private bool _hasCoroutine;
     private bool _hasCurrent;
     private void Awake()
@@ -19,11 +17,8 @@ public class Inspection : MonoBehaviour
 
     public void GetInspectionCoroutine()
     {
-        if (currentCoroutine!=null)
-        {
-            StopCoroutine(currentCoroutine);
-        }
-        inspectionCoroutine = StartCoroutine(StartInspection());
+        StopAllCoroutines();
+        StartCoroutine(StartInspection());
     }
 
     public void GetInspection(ref bool isInspection, float inspectionSensitivity)
@@ -44,11 +39,8 @@ public class Inspection : MonoBehaviour
         else
         {
             if (_hasCoroutine) return;
-            if (inspectionCoroutine!=null)
-            {
-                StopCoroutine(inspectionCoroutine);  
-            }
-            currentCoroutine = StartCoroutine(StartCurrent());
+            StopAllCoroutines();
+            StartCoroutine(StartCurrent());
             _hasCoroutine = true;
 
         }

@@ -150,9 +150,10 @@ GameObject:
   m_Component:
   - component: {fileID: 33594074692302721}
   - component: {fileID: 7216651576779726142}
+  - component: {fileID: 8122965860488297637}
   m_Layer: 0
   m_Name: TriggerHingedDoor
-  m_TagString: OpenableHingedDoor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,3 +195,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.600071, y: 2.0809455, z: 1.0792692}
   m_Center: {x: -0.047501564, y: 0.08650902, z: -0.0034755468}
+--- !u!114 &8122965860488297637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7192795702497022790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b98c89570d06a84ab53c3947b29c15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleRotate: 90
+  duration: 1

@@ -47,9 +47,10 @@ public class Interaction : MonoBehaviour
     {
         if (hit.transform.TryGetComponent(out Inspection inspection))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("Fire1"))
             {
                 _isInspection = !_isInspection;
+                _uiController.crossImage.enabled = !_isInspection;
                 playerMovement.enabled = !_isInspection;
                 _playerRb.isKinematic = _isInspection;
                 if (_isInspection)
@@ -58,6 +59,14 @@ public class Interaction : MonoBehaviour
                 }
             }
             inspection.GetInspection(ref _isInspection,inspectionSensitivity);
+        }
+
+        if (hit.transform.TryGetComponent(out PickUpAble pickUp))
+        {
+            if (Input.GetButtonDown("Fire2"))
+            {
+                pickUp.Pickup();
+            }
         }
     }
 }
