@@ -3,14 +3,14 @@ using UnityEngine;
 public class Interaction : MonoBehaviour
 {
     [SerializeField, Range(1f, 50f)] private float interactDistance = 5f;
-    [SerializeField] private float inspectionSensitivity = 3f; 
+    [SerializeField] private float inspectionSensitivity = 3f;
     private PlayerMovement playerMovement;
     private Camera _camera;
     private UIController _uiController;
     private Rigidbody _playerRb;
     private bool _isInspection;
     private bool _hasCurrent;
-    
+
     private void Awake()
     {
         _camera = Camera.main;
@@ -42,31 +42,45 @@ public class Interaction : MonoBehaviour
             Debug.DrawRay(ray.origin, ray.direction * interactDistance, Color.black);
         }
     }
-    
+
     private void InspectionObject(RaycastHit hit)
     {
         if (hit.transform.TryGetComponent(out Inspection inspection))
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                _isInspection = !_isInspection;
-                _uiController.crossImage.enabled = !_isInspection;
-                playerMovement.enabled = !_isInspection;
-                _playerRb.isKinematic = _isInspection;
+                ToggleInspection();
                 if (_isInspection)
                 {
                     inspection.GetInspectionCoroutine();
                 }
             }
-            inspection.GetInspection(ref _isInspection,inspectionSensitivity);
+
+            inspection.GetInspection(ref _isInspection, inspectionSensitivity);
         }
 
         if (hit.transform.TryGetComponent(out PickUpAble pickUp))
         {
             if (Input.GetButtonDown("Fire2"))
             {
+                PickupObject();
                 pickUp.Pickup();
             }
         }
+    }
+
+    public void ToggleInspection()
+    {
+        _isInspection = !_isInspection;
+        _uiController.crossImage.enabled = !_isInspection;
+        playerMovement.enabled = !_isInspection;
+        _playerRb.isKinematic = _isInspection;
+    }
+
+    private void PickupObject()
+    {
+        _uiController.crossImage.enabled = true;
+        playerMovement.enabled = true;
+        _playerRb.isKinematic = false;
     }
 }
