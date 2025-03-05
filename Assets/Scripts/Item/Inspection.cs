@@ -6,8 +6,7 @@ public class Inspection : MonoBehaviour
     private Camera _camera;
     private Quaternion currentRotation;
     private Vector3 currentPosition;
-    private bool _hasCoroutine;
-    private bool _hasCurrent;
+    
     private void Awake()
     {
         _camera = Camera.main;
@@ -15,36 +14,32 @@ public class Inspection : MonoBehaviour
         currentPosition = transform.position;
     }
 
-    public void GetInspectionCoroutine()
+    public void EnterInspection()
     {
+        if (this ==null)
+            return;
         StopAllCoroutines();
         StartCoroutine(StartInspection());
     }
-
-    public void GetInspection(ref bool isInspection, float inspectionSensitivity)
+    
+    public void UpdateInspection(float inspectionSensitivity)
     {
-        if (isInspection)
-        {
+        if (this ==null)
+            return;
+        float mouseX = Input.GetAxis("Mouse X")*inspectionSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y")*inspectionSensitivity;
+        Quaternion currentRotationT = transform.rotation;
             
-            float mouseX = Input.GetAxis("Mouse X")*inspectionSensitivity;
-            float mouseY = Input.GetAxis("Mouse Y")*inspectionSensitivity;
-            Quaternion currentRotationT = transform.rotation;
+        Quaternion horizontalRotation = Quaternion.AngleAxis(mouseX, Vector3.up);
+        Quaternion verticalRotation = Quaternion.AngleAxis(-mouseY, transform.right);
             
-            Quaternion horizontalRotation = Quaternion.AngleAxis(mouseX, Vector3.up);
-            Quaternion verticalRotation = Quaternion.AngleAxis(-mouseY, transform.right);
-            
-            transform.rotation = horizontalRotation * currentRotationT * verticalRotation;
-            if (_hasCoroutine) _hasCoroutine = false; 
-        }
-        else
-        {
-            if (_hasCoroutine) return;
-            StopAllCoroutines();
-            StartCoroutine(StartCurrent());
-            _hasCoroutine = true;
+        transform.rotation = horizontalRotation * currentRotationT * verticalRotation;
+    }
 
-        }
-        
+    public void ExitInspection()
+    {
+        StopAllCoroutines();
+        StartCoroutine(StartCurrent());
     }
     private IEnumerator StartInspection()
     {

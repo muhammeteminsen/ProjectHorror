@@ -1,4 +1,4 @@
 public interface IPickUpable
 {
-    void Pickup();
+    void Pickup(Interaction interaction);
 }

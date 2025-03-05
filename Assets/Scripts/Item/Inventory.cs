@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -8,8 +7,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject canvasGrid;
     public GameObject CanvasGrid => canvasGrid;
     public TextMeshProUGUI itemText;
-
-    private bool _isInventory;
+    
 
     private void Awake()
     {
@@ -24,17 +22,9 @@ public class Inventory : MonoBehaviour
         canvasGrid.transform.parent.gameObject.SetActive(false);
     }
 
-    private void Update()
+    
+    public void InventoryCanvas(bool isInventory)
     {
-        InventoryCanvas();
-    }
-
-    private void InventoryCanvas()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            _isInventory = !_isInventory;
-            canvasGrid.transform.parent.gameObject.SetActive(_isInventory);
-        }
+        canvasGrid.transform.parent.gameObject.SetActive(isInventory);
     }
 }
