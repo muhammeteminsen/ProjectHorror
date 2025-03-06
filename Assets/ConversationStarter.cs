@@ -12,7 +12,16 @@ public class ConversationStarter : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 ConversationManager.Instance.StartConversation(myConversation);
+                
             }
+        }
+    }
+
+    void StopSound()
+    {
+        if (myConversation.EndConversationFont)
+        {
+            
         }
     }
 }
