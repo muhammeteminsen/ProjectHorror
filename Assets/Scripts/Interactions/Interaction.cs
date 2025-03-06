@@ -27,7 +27,7 @@ public class Interaction : MonoBehaviour
         _currentState.UpdateState(this);
     }
 
-    private void ChangeState(IInteractionState newState)
+    public void ChangeState(IInteractionState newState)
     {
         _currentState?.ExitState(this);
         _currentState = newState;
@@ -75,5 +75,12 @@ public class Interaction : MonoBehaviour
             UIController.crossImage.sprite = UIController.defaultCross;
             Debug.DrawRay(ray.origin, ray.direction * interactDistance, Color.black);
         }
+    }
+    
+    public void GetInteractionStatus(bool status)
+    {
+        UIController.crossImage.enabled = !status;
+        PlayerMovement.enabled = !status;
+        PlayerRb.isKinematic = status;
     }
 }

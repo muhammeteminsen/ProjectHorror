@@ -1,12 +1,8 @@
-using UnityEngine;
-
 public class InspectionState : IInteractionState
 {
     public void EnterState(Interaction interaction)
     {
-        interaction.UIController.crossImage.enabled = false;
-        interaction.PlayerMovement.enabled = false;
-        interaction.PlayerRb.isKinematic = true;
+        interaction.GetInteractionStatus(true);
         interaction.CurrentInspection?.EnterInspection();
     }
 
@@ -18,9 +14,7 @@ public class InspectionState : IInteractionState
 
     public void ExitState(Interaction interaction)
     {
-        interaction.UIController.crossImage.enabled = true;
-        interaction.PlayerMovement.enabled = true;
-        interaction.PlayerRb.isKinematic = false;
+        interaction.GetInteractionStatus(false);
         interaction.CurrentInspection?.ExitInspection();
     }
 }

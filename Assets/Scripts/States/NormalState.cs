@@ -1,3 +1,4 @@
+using UnityEngine;
 
 public class NormalState : IInteractionState
 {
@@ -9,6 +10,10 @@ public class NormalState : IInteractionState
     public void UpdateState(Interaction interaction)
     {
         interaction.InteractionAnyObject();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            interaction.ChangeState(new InventoryState());
+        }
     }
 
     public void ExitState(Interaction interaction)
