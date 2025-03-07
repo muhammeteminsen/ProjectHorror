@@ -10,7 +10,7 @@ public class NormalState : IInteractionState
     public void UpdateState(Interaction interaction)
     {
         interaction.InteractionAnyObject();
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && interaction.Inventory?.CanvasGrid.transform.childCount>0)
         {
             interaction.ChangeState(new InventoryState());
         }
