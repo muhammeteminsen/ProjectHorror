@@ -14,6 +14,7 @@ public class InventoryState : IInteractionState
         {
             interaction.ChangeState(new NormalState());
         }
+        interaction.Inventory?.SwitchItem();
     }
 
     public void ExitState(Interaction interaction)

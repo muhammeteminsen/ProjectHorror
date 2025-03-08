@@ -13,7 +13,4 @@ MonoBehaviour:
   m_Name: Key
   m_EditorClassIdentifier: 
   inventoryImage: {fileID: 6583337808112350236, guid: ace6c16288fc8ef4487f4f05203d45d1, type: 3}
-  inventoryText: A door key is a small, typically metal tool used to operate a lock
-    mechanism on a door, gate, or similar entryway. Its primary function is to secure
-    or unlock the door, allowing authorized individuals to access or exit the space
-    while preventing unauthorized access.
+  inventoryText: Key Description

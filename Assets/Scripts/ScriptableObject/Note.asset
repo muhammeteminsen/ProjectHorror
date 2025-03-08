@@ -13,8 +13,4 @@ MonoBehaviour:
   m_Name: Note
   m_EditorClassIdentifier: 
   inventoryImage: {fileID: 2089993138588541111, guid: 4bb0caaff0c8101498c9fb421eeb2c11, type: 3}
-  inventoryText: "A notebook key serves as a protective mechanism designed to keep
-    the contents of a notebook safe from unauthorized access. It\u2019s typically
-    a small, metal tool used to secure a latch, clasp, or lock on a notebook or journal.
-    The key\u2019s primary purpose is to ensure that only the person with the correct
-    key has the ability to open and read the contents of the notebook."
+  inventoryText: Note Description

@@ -43,9 +43,9 @@ public class Interaction : MonoBehaviour
         {
             if (hit.transform.TryGetComponent(out Inspection inspection))
             {
-                CurrentInspection = inspection;
                 if (Input.GetButtonDown("Fire1"))
                 {
+                    CurrentInspection = inspection;
                     switch (_currentState)
                     {
                         case InspectionState:

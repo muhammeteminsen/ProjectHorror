@@ -16,16 +16,14 @@ public class Inspection : MonoBehaviour
 
     public void EnterInspection()
     {
-        if (this ==null)
-            return;
+        if (this ==null) return;
         StopAllCoroutines();
         StartCoroutine(StartInspection());
     }
     
     public void UpdateInspection(float inspectionSensitivity)
     {
-        if (this ==null)
-            return;
+        if (this ==null) return;
         float mouseX = Input.GetAxis("Mouse X")*inspectionSensitivity;
         float mouseY = Input.GetAxis("Mouse Y")*inspectionSensitivity;
         Quaternion currentRotationT = transform.rotation;
@@ -38,6 +36,7 @@ public class Inspection : MonoBehaviour
 
     public void ExitInspection()
     {
+        if (this ==null) return;
         StopAllCoroutines();
         StartCoroutine(StartCurrent());
     }
