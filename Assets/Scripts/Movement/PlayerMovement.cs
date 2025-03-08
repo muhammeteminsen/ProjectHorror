@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Range(2f, 100f)] private float movementSpeed = 10f;
     [SerializeField] private float movementDeceleration = 5f;
     [SerializeField] private float movementAcceleration = 5f;
-    private Vector2 _inputVector;
+    public Vector2 InputVector { get; private set; }
     [Header("----Sprint")] 
     [SerializeField, Range(4f, 200f)] private float sprintSpeed = 20f;
     [SerializeField] private float sprintAcceleration = 5f;
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("----Jump")]
     [SerializeField] private float jumpFall = 5f;
     private float _groundCheckDistance;
-    private bool _isGroundedRay;
+    public bool IsGroundedRay { get; private set; }
     private Transform _groundCheck;
     [Header("----Components")] 
     private Rigidbody _rb;
@@ -57,17 +57,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement()
     {
-        _inputVector = _inputHandler.GetMovementVectorNormalized();
-        Vector3 moveDirection = transform.right * _inputVector.x + transform.forward * _inputVector.y;
+        InputVector = _inputHandler.GetMovementVectorNormalized();
+        Vector3 moveDirection = transform.right * InputVector.x + transform.forward * InputVector.y;
         Vector3 movement = moveDirection.normalized * movementSpeed;
-        if (_inputVector.x != 0 || _inputVector.y  != 0)
+        if (InputVector.x != 0 || InputVector.y  != 0)
         {
             _rb.linearVelocity = Vector3.Lerp(_rb.linearVelocity, movement,
                 movementAcceleration * Time.deltaTime);
-            Sprint(_inputVector.y);
+            Sprint(InputVector.y);
             
         }
-        else if (_inputVector is { x: 0, y: 0 })
+        else if (InputVector is { x: 0, y: 0 })
         {
             _rb.linearVelocity = Vector3.Slerp(_rb.linearVelocity, Vector3.zero, Time.deltaTime * movementDeceleration);
             movementSpeed = Mathf.Lerp(movementSpeed, _defaultMovementSpeed, sprintDeceleration * Time.deltaTime);
@@ -86,8 +86,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void GravityControl()
     {
-        _isGroundedRay = Physics.Raycast(_groundCheck.position, Vector3.down, 3f);
-        if (_isGroundedRay) return;
+        IsGroundedRay = Physics.Raycast(_groundCheck.position, Vector3.down, 3f);
+        if (IsGroundedRay) return;
         if (_rb.linearVelocity.y < 0)
         {
             _rb.AddForce(Vector3.up * (Physics.gravity.y * jumpFall), ForceMode.Acceleration);
