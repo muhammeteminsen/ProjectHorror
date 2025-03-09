@@ -2700,30 +2700,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5051460674771895697, guid: a862076ef22ece349831f71023bcc3d4, type: 3}
-      propertyPath: metalFootsteps.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5051460674771895697, guid: a862076ef22ece349831f71023bcc3d4, type: 3}
-      propertyPath: 'metalFootsteps.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: d4b0934ea2e97d941b40d222d799433b, type: 3}
-    - target: {fileID: 5051460674771895697, guid: a862076ef22ece349831f71023bcc3d4, type: 3}
-      propertyPath: 'metalFootsteps.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 9c10b19195a03094699dd91d10a0fdc0, type: 3}
-    - target: {fileID: 5051460674771895697, guid: a862076ef22ece349831f71023bcc3d4, type: 3}
-      propertyPath: 'metalFootsteps.Array.data[2]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 254519b8a14f3de4db117792a2de4fe4, type: 3}
-    - target: {fileID: 5051460674771895697, guid: a862076ef22ece349831f71023bcc3d4, type: 3}
-      propertyPath: 'metalFootsteps.Array.data[3]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 65d30cde7ec50e6489b8c2d542d50b15, type: 3}
-    - target: {fileID: 5051460674771895697, guid: a862076ef22ece349831f71023bcc3d4, type: 3}
-      propertyPath: 'metalFootsteps.Array.data[4]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 64fed09d33518e94a93729931ed4ef2a, type: 3}
     - target: {fileID: 7187425099417416172, guid: a862076ef22ece349831f71023bcc3d4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
