@@ -246,11 +246,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: de7e760217c5e7c42bf69b9bf512b78e, type: 3}
   - {fileID: 8300000, guid: aa5daff71fd47a5449265db33ed14374, type: 3}
   metalFootsteps:
-  - {fileID: 8300000, guid: 1341e2b988f0e0f4a8a7f0e194d9d551, type: 3}
-  - {fileID: 8300000, guid: 2045330c19005fa49a1047588f3a222e, type: 3}
-  - {fileID: 8300000, guid: c9cb8cc7e7af5af4780de2147fba30c1, type: 3}
-  - {fileID: 8300000, guid: 59fa51faf2e7a0c4496fd5f4a395e3ff, type: 3}
-  - {fileID: 8300000, guid: 806d02e5dad40d44abdcb70460655e4c, type: 3}
+  - {fileID: 8300000, guid: d4b0934ea2e97d941b40d222d799433b, type: 3}
+  - {fileID: 8300000, guid: 9c10b19195a03094699dd91d10a0fdc0, type: 3}
+  - {fileID: 8300000, guid: 254519b8a14f3de4db117792a2de4fe4, type: 3}
+  - {fileID: 8300000, guid: 65d30cde7ec50e6489b8c2d542d50b15, type: 3}
+  - {fileID: 8300000, guid: 64fed09d33518e94a93729931ed4ef2a, type: 3}
 --- !u!82 &5504363012374407376
 AudioSource:
   m_ObjectHideFlags: 0

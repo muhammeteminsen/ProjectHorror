@@ -8,6 +8,7 @@ public class Interaction : MonoBehaviour
     private Camera Camera { get; set; }
     public UIController UIController { get; private set; }
     public Inventory Inventory { get; private set; }
+    public Lock CurrentLockDoor { get; private set; }
     public Rigidbody PlayerRb { get; private set; }
     public Inspection CurrentInspection { get; private set; }
     private IInteractionState _currentState;
@@ -64,6 +65,15 @@ public class Interaction : MonoBehaviour
                 {
                     pickUpAble.Pickup(this);
                     ChangeState(new NormalState());
+                }
+            }
+
+            if (hit.transform.TryGetComponent(out Lock lockDoor))
+            {
+                if (Input.GetButtonDown("Fire1") && !lockDoor.IsOpenDoor && Inventory?.CanvasGrid.transform.childCount>0)
+                {
+                    CurrentLockDoor = lockDoor;
+                    ChangeState(new InventoryState());
                 }
             }
 

@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 9159557987943639248}
   - component: {fileID: 5058310384105194291}
   - component: {fileID: 2089993138588541111}
+  - component: {fileID: 2075242240531189744}
   m_Layer: 5
   m_Name: NoteImage
   m_TagString: Untagged
@@ -145,6 +146,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2075242240531189744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721678679273025284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84cbb2dac75be247885f0c81f33e57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 1
 --- !u!1 &8241819674600101406
 GameObject:
   m_ObjectHideFlags: 0

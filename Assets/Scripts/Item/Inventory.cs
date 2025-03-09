@@ -10,8 +10,8 @@ public class Inventory : MonoBehaviour
     [SerializeField] private Sprite currentItemSprite;
     public GameObject CanvasGrid => canvasGrid;
     public TextMeshProUGUI itemText;
-    private int _currentIndex;
-    private List<Image> items = new List<Image>();
+    public int CurrentIndex { get; private set; }
+    public List<Image> Items { get; private set; } = new List<Image>();
     private List<Inventory_SO> inventorySos = new List<Inventory_SO>();
     private void Awake()
     {
@@ -30,19 +30,18 @@ public class Inventory : MonoBehaviour
         switch (scroll)
         {
             case < 0f:
-                _currentIndex = (_currentIndex + 1) % canvasGrid.transform.childCount;
+                CurrentIndex = (CurrentIndex + 1) % canvasGrid.transform.childCount;
                 break;
             case > 0f:
-                _currentIndex = (_currentIndex - 1 + canvasGrid.transform.childCount) % canvasGrid.transform.childCount;
+                CurrentIndex = (CurrentIndex - 1 + canvasGrid.transform.childCount) % canvasGrid.transform.childCount;
                 break;
         }
-        foreach (var item in items)
+        foreach (var item in Items)
         {
             item.sprite = defaultItemSprite;
         }
-        itemText.text = inventorySos[_currentIndex].inventoryText;
-        items[_currentIndex].sprite = currentItemSprite;
-        
+        itemText.text = inventorySos[CurrentIndex].inventoryText;
+        Items[CurrentIndex].sprite = currentItemSprite;
     }
 
     public void PickupItem(Inventory_SO inventorySo)
@@ -51,7 +50,7 @@ public class Inventory : MonoBehaviour
             CanvasGrid.transform.position,Quaternion.identity,CanvasGrid.transform);
         newInstance.transform.localRotation = Quaternion.identity;
         Image itemImage = newInstance.GetComponent<Image>();
-        items.Add(itemImage);
+        Items.Add(itemImage);
         inventorySos.Add(inventorySo);
     }
 }

@@ -9,11 +9,9 @@ public class InventoryState : IInteractionState
     }
 
     public void UpdateState(Interaction interaction)
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            interaction.ChangeState(new NormalState());
-        }
+    { 
+        interaction.CurrentLockDoor?.OpenLockDoor(interaction);
+        interaction.CurrentLockDoor?.CheckForEscape(interaction);
         interaction.Inventory?.SwitchItem();
     }
 
