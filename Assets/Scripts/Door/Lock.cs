@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -19,13 +18,18 @@ public class Lock : MonoBehaviour
         if (!Input.GetButtonDown("Fire1")) return;
         var inventoryItem = interaction.Inventory.Items[interaction.Inventory.CurrentIndex]
             .GetComponent<InventoryItem>();
+        var inventory = interaction.Inventory;
         if (inventoryItem.interactType == interactType)
         {
             Destroy(_collider);
             StopAllCoroutines();
             StartCoroutine(
                 LerpController(transform.GetChild(0).rotation, Quaternion.Euler(0, angleRotate, 0), duration));
+            Destroy(inventoryItem.gameObject);
+            inventory.Items.RemoveAt(interaction.Inventory.CurrentIndex);
+            inventory.InventorySos.RemoveAt(interaction.Inventory.CurrentIndex);
             interaction.ChangeState(new NormalState());
+            
         }
         else
         {
