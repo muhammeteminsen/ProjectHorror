@@ -38,11 +38,11 @@ public class Inventory : MonoBehaviour
                 break;
         }
 
+        if (Items.Count <= 0 || InventorySos.Count <= 0) return;
         foreach (var item in Items)
         {
             item.sprite = defaultItemSprite;
         }
-
         itemText.text = InventorySos[CurrentIndex].inventoryText;
         Items[CurrentIndex].sprite = currentItemSprite;
     }

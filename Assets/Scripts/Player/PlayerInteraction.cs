@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InteractionDoor : MonoBehaviour
+public class PlayerInteraction : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
