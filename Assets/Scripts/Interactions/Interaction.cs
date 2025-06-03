@@ -77,19 +77,19 @@ public class Interaction : MonoBehaviour
                 }
             }
 
-            UIController.crossImage.sprite = UIController.interactCross;
+            UIController.CrossImage.sprite = UIController.interactCross;
             Debug.DrawRay(ray.origin, hit.point - ray.origin, Color.magenta);
         }
         else
         {
-            UIController.crossImage.sprite = UIController.defaultCross;
+            UIController.CrossImage.sprite = UIController.defaultCross;
             Debug.DrawRay(ray.origin, ray.direction * interactDistance, Color.black);
         }
     }
     
     public void GetInteractionStatus(bool status)
     {
-        UIController.crossImage.enabled = !status;
+        UIController.CrossImage.enabled = !status;
         PlayerMovement.enabled = !status;
         PlayerRb.isKinematic = status;
     }

@@ -8,6 +8,11 @@ public class PlayerInteraction : MonoBehaviour
         {
             door.Open();
         }
+
+        if (other.TryGetComponent(out Characters character))
+        {
+            DialogueEvent.OnStartDialogue?.Invoke(character);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -17,5 +22,9 @@ public class PlayerInteraction : MonoBehaviour
             door.Close();
         }
         
+        if (other.TryGetComponent(out Characters character))
+        {
+            DialogueEvent.OnEndDialogue?.Invoke(character);
+        }
     }
 }

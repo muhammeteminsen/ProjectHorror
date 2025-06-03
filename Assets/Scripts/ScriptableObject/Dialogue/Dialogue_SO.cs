@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "New Dialogue", menuName = "Create Dialogue")]
-
+[CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue System/Dialogue")]
 public class Dialogue_SO : ScriptableObject
 {
+    public List<Dialogue> dialogues;
     public CharacterType characterType;
-    public List<Dialogue> state;
 }
 [Serializable]
 public class Dialogue
 {
-    [TextArea] public List<string> question;
-    [TextArea] public List<string> answer;   
+    [TextArea] public List<string> questions;
+    [TextArea] public string answer;
+    
 }
