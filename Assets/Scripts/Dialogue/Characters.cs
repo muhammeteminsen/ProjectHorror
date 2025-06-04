@@ -13,5 +13,4 @@ public class Characters : MonoBehaviour
     {
         return characterType;
     }
-    
 }

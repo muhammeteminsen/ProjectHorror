@@ -14,18 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - questions:
-    - 2 q 1
-    - 2 q 2
-    - 2 q 3
-    answer: 
+    - 3 q 1 (Postman)
+    - 3 q 2 (Postman)
+    - 3 q 3 (Postman)
+    answer:
+    - 3 a 1 (Postman)
+    - 3 a 2 (Postman)
+    - 3 a 3 (Postman)
   - questions:
-    - 3 q 1
-    - 3 q 2
-    - 3 q 3
-    answer: 
+    - 1 q 1 (Postman)
+    - 1 q 2 (Postman)
+    - 1 q 3 (Postman)
+    answer:
+    - 1 a 1 (Postman)
+    - 1 a 2 (Postman)
+    - 1 a 3 (Postman)
   - questions:
-    - 1 q 1
-    - 1 q 2
-    - 1 q 3
-    answer: 
+    - 2 q 1 (Postman)
+    - 2 q 2 (Postman)
+    - 2 q 3 (Postman)
+    answer:
+    - 2 a 1 (Postman)
+    - 2 a 2 (Postman)
+    - 2 a 3 (Postman)
   characterType: 0

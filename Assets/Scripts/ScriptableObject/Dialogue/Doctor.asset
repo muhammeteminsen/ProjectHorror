@@ -13,6 +13,28 @@ MonoBehaviour:
   m_Name: Doctor
   m_EditorClassIdentifier: 
   dialogues:
-  - questions: 'Doctor Question 1 '
-    answers: 'Doctor Answer 1 '
+  - questions:
+    - 2 q 1 (Doctor)
+    - 2 q 2 (Doctor)
+    - 2 q 3 (Doctor)
+    answer:
+    - 2 a 1 (Doctor)
+    - 2 a 2 (Doctor)
+    - 2 a 3 (Doctor)
+  - questions:
+    - 3 q 1 (Doctor)
+    - 3 q 2 (Doctor)
+    - 3 q 3 (Doctor)
+    answer:
+    - 3 a 1 (Doctor)
+    - 3 a 2 (Doctor)
+    - 3 a 3 (Doctor)
+  - questions:
+    - 1 q 1 (Doctor)
+    - 1 q 2 (Doctor)
+    - 1 q 3 (Doctor)
+    answer:
+    - 1 a 1 (Doctor)
+    - 1 a 2 (Doctor)
+    - 1 a 3  (Doctor)
   characterType: 2

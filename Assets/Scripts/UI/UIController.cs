@@ -15,6 +15,11 @@ public class UIController : MonoBehaviour
     private void Awake()
     {
         CrossImage = crossReact.GetComponentInChildren<Image>();
+        foreach (var questionText in questionTexts)
+        {
+            Button questionButton = questionText.GetComponent<Button>();
+            questionButton.onClick.AddListener(()=> DialogueListener(questionTexts.IndexOf(questionText)));
+        }
     }
 
     private void Start()
@@ -22,29 +27,30 @@ public class UIController : MonoBehaviour
         CrossImage.sprite = defaultCross;
     }
 
-    public void SetQuestionsText(string question)
+    public void SetQuestionsText(List<string> questions)
     {
-        DialogueTextsStatus(true);
-        foreach (var questionText in questionTexts)
+        answerText.gameObject.SetActive(false);
+        for (int i = 0; i < questionTexts.Count; i++)
         {
-            questionText.text = question;
-            Debug.Log("Question: " + questionText.text);
+            Debug.Log(questionTexts[i].name);
+            questionTexts[i].text = questions[i];
+            questionTexts[i].gameObject.SetActive(true);
         }
     }
 
     public void SetAnswerText(string answer)
     {
-        DialogueTextsStatus(false);
+        answerText.gameObject.SetActive(true);
+        foreach (var questionText in questionTexts)
+        {
+            questionText.gameObject.SetActive(false);
+        }
         answerText.text = answer;
         Debug.Log("Answer: " + answerText.text);
     }
 
-
-    private void DialogueTextsStatus(bool status)
+    private void DialogueListener(int index)
     {
-        foreach (var questionText in questionTexts)
-            questionText.gameObject.SetActive(status);
-        answerText.gameObject.SetActive(!status);
+        DialogueEvent.OnNextDialogue?.Invoke(index);
     }
-    
 }

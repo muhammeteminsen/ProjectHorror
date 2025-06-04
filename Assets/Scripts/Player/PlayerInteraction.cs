@@ -21,10 +21,5 @@ public class PlayerInteraction : MonoBehaviour
         {
             door.Close();
         }
-        
-        if (other.TryGetComponent(out Characters character))
-        {
-            DialogueEvent.OnEndDialogue?.Invoke(character);
-        }
     }
 }

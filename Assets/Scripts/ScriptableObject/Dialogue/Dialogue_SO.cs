@@ -13,6 +13,6 @@ public class Dialogue_SO : ScriptableObject
 public class Dialogue
 {
     [TextArea] public List<string> questions;
-    [TextArea] public string answer;
+    [TextArea] public List<string> answer;
     
 }

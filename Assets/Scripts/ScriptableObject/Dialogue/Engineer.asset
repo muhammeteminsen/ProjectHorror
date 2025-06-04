@@ -13,6 +13,28 @@ MonoBehaviour:
   m_Name: Engineer
   m_EditorClassIdentifier: 
   dialogues:
-  - questions: 'Engineer Question 1 '
-    answers: Engineer Answer 1
+  - questions:
+    - 1 q 1 (Engineer)
+    - 1 q 2 (Engineer)
+    - 1 q 3 (Engineer)
+    answer:
+    - 1 a 1 (Engineer)
+    - 1 a 2 (Engineer)
+    - 1 a 3  (Engineer)
+  - questions:
+    - 2 q 1 (Engineer)
+    - 2 q 2 (Engineer)
+    - 2 q 3 (Engineer)
+    answer:
+    - 2 a 1 (Engineer)
+    - 2 a 2 (Engineer)
+    - 2 a 3 (Engineer)
+  - questions:
+    - 3 q 1 (Engineer)
+    - 3 q 2 (Engineer)
+    - 3 q 3 (Engineer)
+    answer:
+    - 3 a 1 (Engineer)
+    - 3 a 2 (Engineer)
+    - 3 a 3 (Engineer)
   characterType: 1

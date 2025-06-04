@@ -6,14 +6,15 @@ using UnityEngine;
 public class DialogueEvent
 {
     public static Action<Characters> OnStartDialogue;
-    public static Action<Characters> OnNextDialogue;
-    public static Action<Characters> OnEndDialogue;
+    public static Action<int> OnNextDialogue;
+    public static Action OnEndDialogue;
 }
 
 public class DialogueSystem : MonoBehaviour
 {
     [SerializeField] private List<Dialogue_SO> dialogueSOList;
     private Dictionary<CharacterType, Dialogue_SO> dialogueDictionary = new Dictionary<CharacterType, Dialogue_SO>();
+    private Characters currentCharacter;
 
     private void Awake()
     {
@@ -37,31 +38,29 @@ public class DialogueSystem : MonoBehaviour
 
     private void StartDialogue(Characters character)
     {
+        currentCharacter = character;
         Debug.Log("Starting Dialogue");
         if (dialogueDictionary.TryGetValue(character.GetCharacterType(), out Dialogue_SO dialogueSo))
         {
-            foreach (var question in dialogueSo.dialogues[0].questions)
-            {
-                if (!TryGetComponent(out UIController uiController)) return;
-                uiController.SetQuestionsText(question);
-            }
+            Dialogue firstDialogue = dialogueSo.dialogues[0];
+            GetComponent<UIController>().SetQuestionsText(firstDialogue.questions);
         }
     }
 
-    private void NextDialogue(Characters character)
+    private void NextDialogue(int index)
     {
-    }
-
-    private void EndDialogue(Characters character)
-    {
-        if (dialogueDictionary.TryGetValue(character.GetCharacterType(), out Dialogue_SO dialogueSo))
+        if (dialogueDictionary.TryGetValue(currentCharacter.GetCharacterType(), out Dialogue_SO dialogueSo))
         {
-            if (!TryGetComponent(out UIController uiController)) return;
-            uiController.SetAnswerText(dialogueSo.dialogues[0].answer);
             Dialogue firstDialogue = dialogueSo.dialogues[0];
+            GetComponent<UIController>().SetAnswerText(firstDialogue.answer[index]);
             dialogueSo.dialogues.RemoveAt(0);
             dialogueSo.dialogues.Add(firstDialogue);
         }
+    }
+
+    private void EndDialogue()
+    {
+        
     }
 
     private void InitializeDialogueDictionary()
