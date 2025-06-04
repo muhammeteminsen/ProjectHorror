@@ -4,7 +4,7 @@ public class NormalState : IInteractionState
 {
     public void EnterState(Interaction interaction)
     {
-        
+        interaction.UIController?.DialogueCanvasStatus(false);   
     }
 
     public void UpdateState(Interaction interaction)

@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _mainCamera = Camera.main;
-        // Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         _defaultMovementSpeed = movementSpeed;
     }
     private void Update()
